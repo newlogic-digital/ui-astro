@@ -1,0 +1,29 @@
+@import "./dark.css";
+
+@theme {
+  --default-font-family: "Inter", sans-serif;
+  --default-color-space: srgb;
+  --default-color-scheme: inherit;
+  --color-accent: var(--color-primary);
+  --color-accent-foreground: var(--color-primary-foreground);
+  --color-primary: #076cff;
+  --color-primary-foreground: var(--color-light);
+  --color-main: #181818;
+  --color-main-foreground: var(--color-body);
+  --color-main-primary: var(--color-main);
+  --color-main-secondary: color-mix(in var(--default-color-space), var(--color-main) 80%, var(--color-main-foreground));
+  --color-main-tertiary: color-mix(in var(--default-color-space), var(--color-main) 49%, var(--color-main-foreground));
+  --color-body: #fff;
+  --color-body-foreground: var(--color-main);
+  --color-body-primary: var(--color-body);
+  --color-body-secondary: color-mix(in var(--default-color-space), var(--color-body) 93%, var(--color-body-foreground));
+  --color-body-tertiary: color-mix(in var(--default-color-space), var(--color-body) 82%, var(--color-body-foreground));
+  --color-light: #fff;
+  --color-light-foreground: var(--color-dark);
+  --color-dark: #181818;
+  --color-dark-foreground: var(--color-light);
+  --color-success: #00c951;
+  --color-error: #e7000b;
+  --color-warning: #fcc800;
+  --color-info: #00bcff;
+}

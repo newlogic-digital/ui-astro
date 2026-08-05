@@ -1,0 +1,83 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+
+const { as: Tag = 'button', class: className, ...props } = Astro.props;
+---
+
+<Tag is={Tag === 'a' ? 'x-button--a' : 'x-button'} class:list={["x-button", className]} {...props}>
+    <slot />
+</Tag>
+
+<script>
+    import { Button } from 'winduum-elements/components/button/index.js'
+
+    customElements.define('x-button', Button(HTMLButtonElement), { extends: 'button' })
+    customElements.define('x-button--a', Button(HTMLAnchorElement), { extends: 'a' })
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/button/props/default.css" layer(theme);
+  @import "winduum/src/components/button/props/interactive.css" layer(theme);
+  @import "winduum/src/components/button/default.css" layer(utilities);
+  @import "winduum/src/components/button/interactive.css" layer(utilities);
+  @import "winduum/src/components/button/bordered.css" layer(utilities);
+  @import "winduum/src/components/button/ghosted.css" layer(utilities);
+  @import "winduum/src/components/button/muted.css" layer(utilities);
+  @import "winduum/src/components/button/square.css" layer(utilities);
+  @import "winduum/src/components/button/circle.css" layer(utilities);
+  @import "winduum/src/components/button/spinner.css" layer(utilities);
+  @import "tailwindcss/utilities" layer(utilities) source("./");
+
+  @utility lg {
+    .x-button:where(&) {
+      --x-button-block-size: 3rem;
+      --x-button-padding-inline: 1.5rem;
+    }
+  }
+
+  @utility sm {
+    .x-button:where(&) {
+      --x-button-block-size: 2rem;
+      --x-button-padding-inline: 1rem;
+    }
+  }
+
+  @utility hover {
+    .x-button:is(&) {
+      --x-button-background-color: var(--x-button-hover-background-color, var(--color-accent));
+      --x-button-background-color-mix: var(--x-button-hover-background-color-mix);
+      --x-button-background-color-opacity: var(--x-button-hover-background-color-opacity);
+      --x-button-border-color: var(--x-button-hover-border-color, var(--color-accent));
+      --x-button-border-color-mix: var(--x-button-hover-border-color-mix, transparent);
+      --x-button-border-color-opacity: var(--x-button-hover-border-color-opacity, 100%);
+      --x-button-color: var(--x-button-hover-color, var(--color-accent-foreground));
+      --x-button-color-mix: var(--x-button-hover-color-mix, transparent);
+      --x-button-color-opacity: var(--x-button-hover-color-opacity, 100%);
+    }
+  }
+
+  @utility focus {
+    .x-button:is(&) {
+      --x-button-outline-offset: var(--x-button-focus-outline-offset);
+      --x-button-outline-color: var(--x-button-focus-outline-color, var(--color-accent));
+      --x-button-outline-color-opacity: var(--x-button-focus-outline-color-opacity);
+    }
+  }
+
+  @utility active {
+    .x-button:is(&) {
+      --x-button-background-color: var(--x-button-active-background-color, var(--color-accent));
+      --x-button-background-color-mix: var(--x-button-active-background-color-mix);
+      --x-button-background-color-opacity: var(--x-button-active-background-color-opacity);
+      --x-button-border-color: var(--x-button-active-border-color, var(--color-accent));
+      --x-button-border-color-mix: var(--x-button-active-border-color-mix, transparent);
+      --x-button-border-color-opacity: var(--x-button-active-border-color-opacity, 100%);
+      --x-button-color: var(--x-button-active-color, var(--color-accent-foreground));
+      --x-button-color-mix: var(--x-button-active-color-mix, transparent);
+      --x-button-color-opacity: var(--x-button-active-color-opacity, 100%);
+    }
+  }
+</style>

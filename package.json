@@ -1,0 +1,24 @@
+{
+  "name": "winduum-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^2.1.1",
+    "@newlogic-digital/cookieconsent-js": "^1.1.1",
+    "@newlogic-digital/webuum-components": "^0.0.21",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.1.6",
+    "tailwindcss": "^4.3.3",
+    "winduum": "^3.0.0-next.17",
+    "winduum-elements": "^0.0.18"
+  }
+}

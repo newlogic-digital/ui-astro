@@ -1,0 +1,6 @@
+@import "winduum/src/utilities/container/props/default.css" layer(theme);
+@import "winduum/src/utilities/ripple/keyframes/default.css";
+@import "winduum/src/utilities/skeleton/props/default.css" layer(theme);
+@import "winduum/src/utilities/spinner/keyframes/ring.css";
+@import "winduum/tailwindcss/utilities/index.css";
+@import "winduum/tailwindcss/utilities/animation-trigger-fallback.css";

@@ -1,0 +1,12 @@
+@import "winduum/src/base/defaults.css";
+@import "winduum/src/base/defaults-extended.css";
+
+:where(html) {
+  @media (width >= 60rem) and (width < 76rem) {
+    font-size: 87.5%;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
