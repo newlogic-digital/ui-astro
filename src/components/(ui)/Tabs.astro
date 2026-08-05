@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-tabs class:list={["x-tabs", className]} {...props}>
+    <slot />
+</x-tabs>
+
+<script>
+    import { Tabs } from 'winduum-elements/components/tabs/index.js'
+
+    customElements.define('x-tabs', Tabs)
+</script>

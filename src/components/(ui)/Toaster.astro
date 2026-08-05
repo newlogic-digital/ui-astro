@@ -1,3 +1,23 @@
-<x-toaster class="x-toaster items-end" aria-live="polite" aria-atomic="true">
+---
+import type { HTMLAttributes } from "astro/types";
 
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-toaster class:list={["x-toaster", className]} aria-live="polite" aria-atomic="true" popover {...props}>
+    <slot />
 </x-toaster>
+
+<script>
+    import { Toaster } from 'winduum-elements/components/toaster/index.js'
+
+    customElements.define('x-toaster', Toaster)
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/toaster/props/default.css" layer(theme);
+  @import "winduum/src/components/toaster/default.css" layer(utilities);
+</style>

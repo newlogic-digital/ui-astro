@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-carousel class:list={["x-carousel", className]} {...props}>
+    <slot />
+</x-carousel>
+
+<script>
+    import { Carousel } from 'winduum-elements/components/carousel/index.js'
+
+    customElements.define('x-carousel', Carousel)
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/carousel/default.css" layer(utilities);
+  @import "winduum/src/components/carousel/content.css" layer(utilities);
+</style>

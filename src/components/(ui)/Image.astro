@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'picture'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<picture is="x-image" class:list={["x-image", className]} {...props}>
+    <slot />
+</picture>
+
+<script>
+    import { Image } from 'winduum-elements/components/image/index.js'
+
+    customElements.define('x-image', class Element extends Image(HTMLPictureElement) {}, { extends: 'picture' })
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/image/default.css" layer(utilities);
+  @import "winduum/src/components/image/avatar.css" layer(utilities);
+</style>

@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-range class:list={["x-range", className]} {...props}>
+    <slot />
+</x-range>
+
+<script>
+    import { Range } from 'winduum-elements/components/range/index.js'
+
+    customElements.define('x-range', Range)
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/range/props/default.css" layer(theme);
+  @import "winduum/src/components/range/default.css" layer(utilities);
+  @import "winduum/src/components/range/multi.css" layer(utilities);
+  @import "winduum/src/components/range/vertical.css" layer(utilities);
+</style>

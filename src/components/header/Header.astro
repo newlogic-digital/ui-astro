@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'header'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<header is="x-header" class:list={["x-header", className]} {...props}>
+    <slot />
+</header>
+
+<script>
+    import { Header } from '@newlogic-digital/webuum-components'
+
+    customElements.define('x-header', class Element extends Header {}, { extends: 'header' })
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+
+  @layer theme {
+    :root,
+    :host {
+      --scroll-padding-top: calc(var(--x-header-height) + 1rem);
+      --x-header-height: 4rem;
+    }
+  }
+
+  @layer utilities {
+    .x-header {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-index-20);
+      height: var(--x-header-height);
+    }
+  }
+</style>

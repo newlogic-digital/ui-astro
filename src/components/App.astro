@@ -1,10 +1,17 @@
-<body is="x-app">
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'body'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<body is="x-app" class:list={[className]} {...props}>
     <slot />
 </body>
 
 <script>
-    import { Header } from '@newlogic-digital/webuum-components'
+    import '../scripts/polyfill.js'
 
-    customElements.define('x-header', class Element extends Header {}, { extends: 'header' })
     customElements.define('x-app', class App extends HTMLBodyElement {}, { extends: 'body' })
 </script>

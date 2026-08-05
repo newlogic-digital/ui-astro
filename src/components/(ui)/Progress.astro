@@ -1,0 +1,21 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+
+const { as: Tag = 'progress', class: className, ...props } = Astro.props;
+---
+
+<Tag class:list={["x-progress", className]} {...props}>
+    <slot />
+</Tag>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/progress/props/default.css" layer(theme);
+  @import "winduum/src/components/progress/keyframes/default.css";
+  @import "winduum/src/components/progress/default.css" layer(utilities);
+  @import "winduum/src/components/progress/meter.css" layer(utilities);
+  @import "winduum/src/components/progress/sm.css" layer(utilities);
+  @import "winduum/src/components/progress/lg.css" layer(utilities);
+</style>

@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-google-maps class:list={["x-map", className]} {...props}>
+    <slot />
+</x-google-maps>
+
+<script>
+    import { GoogleMaps } from '@newlogic-digital/webuum-components'
+
+    customElements.define('x-google-maps', class Element extends GoogleMaps {
+      async lazyCallback() {
+        await super.lazyCallback()
+        await this.renderMarker()
+      }
+    })
+</script>

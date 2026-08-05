@@ -1,0 +1,50 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+
+const { as: Tag = 'h2', class: className, ...props } = Astro.props;
+---
+
+<Tag class:list={["x-heading", className]} {...props}>
+    <slot />
+</Tag>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/heading/props/default.css" layer(theme);
+  @import "winduum/src/components/heading/default.css" layer(utilities);
+  @import "tailwindcss/utilities" layer(utilities) source("./");
+
+  @layer theme {
+    :root,
+    :host {
+      --x-heading-font-weight: var(--font-weight-medium);
+      --x-heading-line-height: 1.2;
+    }
+  }
+
+  @utility xs {
+    .x-heading:is(&) {
+      --x-heading-font-size: var(--text-2xl);
+    }
+  }
+
+  @utility sm {
+    .x-heading:is(&) {
+      --x-heading-font-size: var(--text-3xl);
+    }
+  }
+
+  @utility lg {
+    .x-heading:is(&) {
+      --x-heading-font-size: var(--text-5xl);
+    }
+  }
+
+  @utility xl {
+    .x-heading:is(&) {
+      --x-heading-font-size: var(--text-6xl);
+    }
+  }
+</style>

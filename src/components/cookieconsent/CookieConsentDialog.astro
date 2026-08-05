@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'dialog'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<dialog is="x-cookieconsent-dialog" class:list={["x-cookieconsent-dialog x-dialog", className]} {...props}>
+    <slot />
+</dialog>
+
+<script>
+    import { CookieConsentDialog } from '@newlogic-digital/webuum-components'
+
+    customElements.define('x-cookieconsent-dialog', CookieConsentDialog, { extends: 'dialog' })
+</script>

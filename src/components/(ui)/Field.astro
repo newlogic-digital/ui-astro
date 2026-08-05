@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'div'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<x-field class:list={["x-field", className]} {...props}>
+    <slot />
+</x-field>
+
+<script>
+    import { Field } from 'winduum-elements/components/field/index.js'
+
+    customElements.define('x-field', Field)
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/field/default.css" layer(utilities);
+</style>

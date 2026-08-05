@@ -2,6 +2,7 @@
 import "/src/styles/main.css"
 import Toaster from "../components/(ui)/Toaster.astro";
 import App from "../components/App.astro";
+import Main from "../components/Main.astro";
 ---
 
 <!doctype html>
@@ -19,12 +20,14 @@ import App from "../components/App.astro";
 	</head>
 	<App>
 		<slot name="head" />
-		<main class="x-main view-transition-main">
+		<Main class="view-transition-main">
 			<slot />
-		</main>
+		</Main>
 		<slot name="foot" />
 
-		<Toaster />
+		<Toaster class="items-end">
+			<slot name="toast" />
+		</Toaster>
 	</App>
 </html>
 

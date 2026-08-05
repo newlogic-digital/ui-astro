@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'form'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<form is="x-cookieconsent-form" class:list={["x-cookieconsent-form", className]} autocomplete="off" {...props}>
+    <slot />
+</form>
+
+<script>
+    import { CookieConsentForm } from '@newlogic-digital/webuum-components'
+
+    customElements.define('x-cookieconsent-form', CookieConsentForm, { extends: 'form' })
+</script>

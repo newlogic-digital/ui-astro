@@ -1,0 +1,17 @@
+---
+import type { HTMLTag, Polymorphic } from "astro/types";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+
+const { as: Tag = 'label', class: className, ...props } = Astro.props;
+---
+
+<Tag class:list={["x-label", className]} {...props}>
+    <slot />
+</Tag>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/label/props/default.css" layer(theme);
+  @import "winduum/src/components/label/default.css" layer(utilities);
+</style>

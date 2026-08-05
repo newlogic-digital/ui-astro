@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<'dialog'>;
+
+const { class: className, ...props } = Astro.props;
+---
+
+<dialog class:list={["x-dialog", className]} {...props}>
+    <slot />
+</dialog>
+
+<script>
+    import 'winduum/src/components/dialog/index.js'
+</script>
+
+<style is:global>
+  @layer theme, base, utilities;
+  @import "winduum/src/components/dialog/props/default.css" layer(theme);
+  @import "winduum/src/components/dialog/props/content.css" layer(theme);
+  @import "winduum/src/components/dialog/default.css" layer(utilities);
+  @import "winduum/src/components/dialog/content.css" layer(utilities);
+</style>
