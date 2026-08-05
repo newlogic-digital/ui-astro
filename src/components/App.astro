@@ -11,7 +11,5 @@ const { class: className, ...props } = Astro.props;
 </body>
 
 <script>
-    import '../scripts/polyfill.js'
-
     customElements.define('x-app', class App extends HTMLBodyElement {}, { extends: 'body' })
 </script>

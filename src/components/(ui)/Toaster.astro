@@ -6,7 +6,7 @@ type Props = HTMLAttributes<'div'>;
 const { class: className, ...props } = Astro.props;
 ---
 
-<x-toaster class:list={["x-toaster", className]} aria-live="polite" aria-atomic="true" popover {...props}>
+<x-toaster class:list={["x-toaster", className]} aria-live="polite" aria-atomic="true" popover="auto" {...props}>
     <slot />
 </x-toaster>
 

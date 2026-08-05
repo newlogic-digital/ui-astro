@@ -134,7 +134,7 @@ import Footer from '../components/footer/Footer.astro';
                 <Button command="toggle-popover" commandfor="popoverElement" aria-controls="popoverElement">Toggle popover</Button>
             </div>
 
-            <Popover id="popoverElement" class="bottom my-2" popover="auto" data-auto-update="true" data-placement="bottom">
+            <Popover id="popoverElement" class="bottom my-2 w-(--anchor-size,anchor-size(inline))" popover="auto">
                 <div class="x-popover-content shadow flex flex-col p-2 w-40">
                     <Button class="ghosted accent-main justify-start">Item 1</Button>
                     <Button class="ghosted accent-main justify-start">Item 2</Button>

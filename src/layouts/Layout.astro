@@ -1,5 +1,4 @@
 ---
-import "/src/styles/main.css"
 import Toaster from "../components/(ui)/Toaster.astro";
 import App from "../components/App.astro";
 import Main from "../components/Main.astro";
@@ -9,7 +8,10 @@ import Main from "../components/Main.astro";
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 
@@ -20,7 +22,7 @@ import Main from "../components/Main.astro";
 	</head>
 	<App>
 		<slot name="head" />
-		<Main class="view-transition-main">
+		<Main>
 			<slot />
 		</Main>
 		<slot name="foot" />
@@ -31,11 +33,10 @@ import Main from "../components/Main.astro";
 	</App>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+	@import "/src/styles/main.css";
 </style>
+
+<script>
+	import '../scripts/polyfill.js'
+</script>

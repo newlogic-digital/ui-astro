@@ -13,5 +13,3 @@
 @source "../../node_modules/winduum/src";
 @source "../../node_modules/winduum-elements";
 @source "../../node_modules/@newlogic-digital/webuum-components";
-@source not "../templates/emails";
-@source not "../views/emails";
