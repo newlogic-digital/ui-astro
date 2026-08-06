@@ -22,7 +22,7 @@
     "@floating-ui/dom": "^1.8.0",
     "@googlemaps/js-api-loader": "^2.1.1",
     "@newlogic-digital/cookieconsent-js": "^1.1.1",
-    "@newlogic-digital/webuum-components": "^0.0.21",
+    "@newlogic-digital/webuum-components": "^0.0.22",
     "@tailwindcss/vite": "^4.3.3",
     "@webreflection/custom-elements-builtin": "^0.4.1",
     "astro": "^7.1.6",
@@ -31,7 +31,7 @@
     "tailwindcss": "^4.3.3",
     "webuum": "^0.2.5",
     "winduum": "^3.0.0-next.17",
-    "winduum-elements": "^0.0.18"
+    "winduum-elements": "^0.0.19"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
