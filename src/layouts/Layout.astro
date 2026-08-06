@@ -19,6 +19,11 @@ import Main from "../components/Main.astro";
 		<link rel="icon" type="image/webp" href="/favicons/favicon-512.webp">
 		<link rel="apple-touch-icon" type="image/webp" href="/favicons/favicon-512.webp">
 		<link rel="manifest" href="/favicons/manifest.webmanifest">
+
+		<script>
+			import 'webuum/polyfill'
+			import 'winduum/polyfill'
+		</script>
 	</head>
 	<App>
 		<slot name="head" />
@@ -36,7 +41,3 @@ import Main from "../components/Main.astro";
 <style is:global>
 	@import "/src/styles/main.css";
 </style>
-
-<script>
-	import '../scripts/polyfill.js'
-</script>
