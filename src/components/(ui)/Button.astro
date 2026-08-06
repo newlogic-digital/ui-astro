@@ -19,6 +19,7 @@ const { as: Tag = 'button', class: className, ...props } = Astro.props;
 
 <style is:global>
   @layer theme, base, utilities;
+
   @import "winduum/src/components/button/props/default.css" layer(theme);
   @import "winduum/src/components/button/props/interactive.css" layer(theme);
   @import "winduum/src/components/button/default.css" layer(utilities);

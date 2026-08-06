@@ -16,6 +16,7 @@ const { class: className, ...props } = Astro.props;
 
 <style is:global>
   @layer theme, base, utilities;
+
   @import "winduum/src/components/dialog/props/default.css" layer(theme);
   @import "winduum/src/components/dialog/props/content.css" layer(theme);
   @import "winduum/src/components/dialog/default.css" layer(utilities);

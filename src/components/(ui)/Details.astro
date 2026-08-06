@@ -12,5 +12,6 @@ const { as: Tag = 'details', class: className, ...props } = Astro.props;
 
 <style is:global>
   @layer theme, base, utilities;
+
   @import "winduum/src/components/details/index.css" layer(utilities);
 </style>

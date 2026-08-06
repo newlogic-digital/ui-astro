@@ -12,5 +12,6 @@ const { as: Tag = 'nav', class: className, ...props } = Astro.props;
 
 <style is:global>
   @layer theme, base, utilities;
+
   @import "winduum/src/components/pagination/default.css" layer(utilities);
 </style>
