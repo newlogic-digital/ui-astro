@@ -14,7 +14,7 @@ export default defineConfig([
     extends: [
       'js/recommended',
       tseslint.configs.recommended,
-      stylistic.configs.recommended,
+      stylistic.configs.customize({ jsx: false }),
     ],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -25,13 +25,4 @@ export default defineConfig([
     },
   },
   ...astro.configs.recommended,
-  {
-    files: ['**/*.astro'],
-    rules: {
-      '@stylistic/jsx-one-expression-per-line': [
-        'error',
-        { allow: 'non-jsx' },
-      ],
-    },
-  },
 ])

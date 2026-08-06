@@ -1,4 +1,4 @@
-import type { Config } from 'stylelint';
+import type { Config } from 'stylelint'
 
 export default {
   extends: [
@@ -29,4 +29,4 @@ export default {
     'nesting-selector-no-missing-scoping-root': null,
     'no-invalid-position-declaration': null,
   },
-} satisfies Config;
+} satisfies Config
