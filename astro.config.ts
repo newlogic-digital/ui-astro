@@ -13,13 +13,15 @@ export default defineConfig({
       },
     },
   )],
-  fonts: [{
-    provider: fontProviders.google(),
-    name: 'Inter',
-    cssVariable: '--font-inter',
-    weights: ['400 700'],
-    subsets: ['latin', 'latin-ext'],
-  }],
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      weights: ['400 700'],
+      subsets: ['latin', 'latin-ext'],
+    },
+  ],
   vite: {
     plugins: [tailwindcss()],
     // css: {
