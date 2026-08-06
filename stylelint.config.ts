@@ -29,4 +29,12 @@ export default {
     'nesting-selector-no-missing-scoping-root': null,
     'no-invalid-position-declaration': null,
   },
+  overrides: [
+    {
+      files: ['**/*.astro'],
+      rules: {
+        'custom-property-empty-line-before': null,
+      },
+    },
+  ],
 } satisfies Config

@@ -1,19 +1,19 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro';
-import Playground from '../components/Playground.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Playground from '../components/Playground.astro'
 import Toast from '../components/(ui)/Toast.astro';
 ---
 
 <DefaultLayout>
-    <Playground />
+  <Playground />
 
-    <Toast slot="toast" id="toastElement">
-        <div class="x-toast-content">
-            <div class="flex-col">
-                <div class="x-title">Hello toast</div>
-                <div class="x-text">Amazing toast</div>
-            </div>
-            <button class="x-button muted ml-auto" command="--close" commandfor="toastElement">Close</button>
-        </div>
-    </Toast>
+  <Toast slot="toast" id="toastElement">
+    <div class="x-toast-content">
+      <div class="flex-col">
+        <div class="x-title">Hello toast</div>
+        <div class="x-text">Amazing toast</div>
+      </div>
+      <button class="x-button muted ml-auto" command="--close" commandfor="toastElement">Close</button>
+    </div>
+  </Toast>
 </DefaultLayout>

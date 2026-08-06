@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'div'>;
+type Props = HTMLAttributes<'div'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<x-toast class:list={["x-toast", className]} role="alert" aria-live="assertive" aria-atomic="true" {...props}>
-    <slot />
+<x-toast class:list={['x-toast', className]} role="alert" aria-live="assertive" aria-atomic="true" {...props}>
+  <slot />
 </x-toast>
 
 <script>

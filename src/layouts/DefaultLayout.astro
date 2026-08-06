@@ -1,51 +1,51 @@
 ---
-import Toaster from "../components/(ui)/Toaster.astro";
-import App from "../components/App.astro";
-import Main from "../components/Main.astro";
+import Toaster from '../components/(ui)/Toaster.astro'
+import App from '../components/App.astro'
+import Main from '../components/Main.astro';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Astro Basics</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>Astro Basics</title>
 
-		<!--<meta n:ifset="$keywords" name="keywords" content="{$keywords}">-->
-		<!--<meta n:ifset="$description" name="description" content="{$description}">-->
-		<!--<meta n:ifset="$author" name="author" content="{$author}">-->
-		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-		<meta name="format-detection" content="telephone=no">
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<!--<meta name="apple-mobile-web-app-title" content="{$title}">-->
-		<!--<meta name="theme-color" content="{$themeColor}">-->
-		<meta name="generator" content={Astro.generator} />
+    <!--<meta n:ifset="$keywords" name="keywords" content="{$keywords}">-->
+    <!--<meta n:ifset="$description" name="description" content="{$description}">-->
+    <!--<meta n:ifset="$author" name="author" content="{$author}">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!--<meta name="apple-mobile-web-app-title" content="{$title}">-->
+    <!--<meta name="theme-color" content="{$themeColor}">-->
+    <meta name="generator" content={Astro.generator} />
 
-		<script>
-			import 'webuum/polyfill'
-			import 'winduum/polyfill'
-		</script>
+    <script>
+        import 'webuum/polyfill'
+        import 'winduum/polyfill'
+    </script>
 
-		<link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
-		<link rel="icon" type="image/webp" href="/favicons/favicon-512.webp">
-		<link rel="apple-touch-icon" type="image/webp" href="/favicons/favicon-512.webp">
-		<link rel="manifest" href="/favicons/manifest.webmanifest">
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="icon" type="image/webp" href="/favicons/favicon-512.webp">
+    <link rel="apple-touch-icon" type="image/webp" href="/favicons/favicon-512.webp">
+    <link rel="manifest" href="/favicons/manifest.webmanifest">
 
-		<!--<script n:if="$autoDarkMode">-->
-		<!--	(localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.documentElement.classList.add('dark')-->
-		<!--</script>-->
-	</head>
-	<App>
-		<slot name="head" />
-		<Main>
-			<slot />
-		</Main>
-		<slot name="foot" />
+    <!--<script n:if="$autoDarkMode">-->
+    <!--  (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.documentElement.classList.add('dark')-->
+    <!--</script>-->
+  </head>
+  <App>
+    <slot name="head" />
+    <Main>
+      <slot />
+    </Main>
+    <slot name="foot" />
 
-		<Toaster class="items-end">
-			<slot name="toast" />
-		</Toaster>
-	</App>
+    <Toaster class="items-end">
+      <slot name="toast" />
+    </Toaster>
+  </App>
 </html>
 
 <style is:global>

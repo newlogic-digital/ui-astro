@@ -1,13 +1,13 @@
 ---
-import type { HTMLTag, Polymorphic } from "astro/types";
+import type { HTMLTag, Polymorphic } from 'astro/types'
 
-type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>;
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }>
 
 const { as: Tag = 'h2', class: className, ...props } = Astro.props;
 ---
 
-<Tag class:list={["x-heading", className]} {...props}>
-    <slot />
+<Tag class:list={['x-heading', className]} {...props}>
+  <slot />
 </Tag>
 
 <style is:global>

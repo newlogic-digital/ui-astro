@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'div'>;
+type Props = HTMLAttributes<'div'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<x-popover class:list={["x-popover", className]} {...props}>
-    <slot />
+<x-popover class:list={['x-popover', className]} {...props}>
+  <slot />
 </x-popover>
 
 <script>

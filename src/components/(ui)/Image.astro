@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'picture'>;
+type Props = HTMLAttributes<'picture'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<picture is="x-image" class:list={["x-image", className]} {...props}>
-    <slot />
+<picture is="x-image" class:list={['x-image', className]} {...props}>
+  <slot />
 </picture>
 
 <script>

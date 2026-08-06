@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'main'>;
+type Props = HTMLAttributes<'main'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<main class:list={["x-main", className]} {...props}>
-    <slot />
+<main class:list={['x-main', className]} {...props}>
+  <slot />
 </main>
 
 <style is:global>

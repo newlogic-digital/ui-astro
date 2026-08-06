@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'header'>;
+type Props = HTMLAttributes<'header'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<header is="x-header" class:list={["x-header", className]} {...props}>
-    <slot />
+<header is="x-header" class:list={['x-header', className]} {...props}>
+  <slot />
 </header>
 
 <script>

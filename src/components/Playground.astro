@@ -1,399 +1,407 @@
 ---
-import Button from '@/components/(ui)/Button.astro';
-import Carousel from '@/components/(ui)/Carousel.astro';
-import Check from '@/components/(ui)/Check.astro';
-import Control from '@/components/(ui)/Control.astro';
-import Details from '@/components/(ui)/Details.astro';
-import Dialog from '@/components/(ui)/Dialog.astro';
-import Drawer from '@/components/(ui)/Drawer.astro';
-import Field from '@/components/(ui)/Field.astro';
-import Form from '@/components/(ui)/Form.astro';
-import Group from '@/components/(ui)/Group.astro';
-import Image from '@/components/(ui)/Image.astro';
-import Label from '@/components/(ui)/Label.astro';
-import Marquee from '@/components/(ui)/Marquee.astro';
-import Popover from '@/components/(ui)/Popover.astro';
-import Range from '@/components/(ui)/Range.astro';
-import Switch from '@/components/(ui)/Switch.astro';
-import Tabs from '@/components/(ui)/Tabs.astro';
-import Title from '@/components/(ui)/Title.astro';
-import GoogleMaps from './GoogleMaps.astro';
+import Button from '@/components/(ui)/Button.astro'
+import Carousel from '@/components/(ui)/Carousel.astro'
+import Check from '@/components/(ui)/Check.astro'
+import Control from '@/components/(ui)/Control.astro'
+import Details from '@/components/(ui)/Details.astro'
+import Dialog from '@/components/(ui)/Dialog.astro'
+import Drawer from '@/components/(ui)/Drawer.astro'
+import Field from '@/components/(ui)/Field.astro'
+import Form from '@/components/(ui)/Form.astro'
+import Group from '@/components/(ui)/Group.astro'
+import Image from '@/components/(ui)/Image.astro'
+import Label from '@/components/(ui)/Label.astro'
+import Marquee from '@/components/(ui)/Marquee.astro'
+import Popover from '@/components/(ui)/Popover.astro'
+import Range from '@/components/(ui)/Range.astro'
+import Switch from '@/components/(ui)/Switch.astro'
+import Tabs from '@/components/(ui)/Tabs.astro'
+import Title from '@/components/(ui)/Title.astro'
+import GoogleMaps from './GoogleMaps.astro'
 
 const partners = [
-    { color: '777777', hidden: false },
-    { color: '777777', hidden: false },
-    { color: '888888', hidden: false },
-    { color: '333333', hidden: false },
-    { color: '333333', hidden: true },
-    { color: '111111', hidden: true },
-    { color: '444444', hidden: true },
-    { color: '444444', hidden: true },
-    { color: '888888', hidden: true },
-    { color: '222222', hidden: true },
-];
+  { color: '777777', hidden: false },
+  { color: '777777', hidden: false },
+  { color: '888888', hidden: false },
+  { color: '333333', hidden: false },
+  { color: '333333', hidden: true },
+  { color: '111111', hidden: true },
+  { color: '444444', hidden: true },
+  { color: '444444', hidden: true },
+  { color: '888888', hidden: true },
+  { color: '222222', hidden: true },
+]
 
 const lorem = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet non tellus at cursus. Nulla fermentum nunc quis ultricies semper. Aliquam nisl ipsum, vehicula eu risus in, dapibus ullamcorper leo. Proin vehicula turpis ac ultrices tristique. Donec at consequat felis. Quisque ligula justo, molestie a consequat in, eleifend quis lacus. In congue lobortis nulla, vitae gravida velit scelerisque at. Fusce imperdiet venenatis tempor. Vestibulum enim enim, semper eget quam a, posuere tempor neque. Donec ultrices, mauris gravida sodales accumsan, ante libero efficitur est, laoreet pellentesque nibh mauris id ante.',
-    'Aliquam at purus nulla. Vestibulum id mauris id dolor bibendum mattis. Proin volutpat odio at lectus accumsan aliquam. Nulla congue sapien sed posuere commodo. Sed molestie eros id lectus venenatis dignissim. Aenean sed ligula metus. Donec sem nibh, commodo nec arcu sed, mollis ultrices leo. Nullam pulvinar posuere eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque est nunc, et ultricies purus condimentum ac. Mauris ac sollicitudin nulla. Morbi rhoncus mauris at sapien viverra imperdiet. Proin maximus tempus lorem, id euismod lacus sollicitudin hendrerit. Praesent tortor est, bibendum id sem non, faucibus fermentum massa.',
-    'In at ipsum vel eros viverra vehicula. Aliquam quis urna eros. Praesent bibendum dignissim nibh faucibus pretium. Ut pellentesque blandit elit bibendum feugiat. Curabitur et purus eu eros bibendum dignissim vitae ornare ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus a libero sagittis, pretium erat id, vulputate ipsum. Duis posuere lectus et nisl varius accumsan. Etiam condimentum purus at purus hendrerit, in lobortis massa eleifend.',
-    'Nulla leo ipsum, iaculis at tristique eu, vehicula sed purus. Sed ultricies est ac urna sollicitudin, quis feugiat dui aliquam. Fusce in nibh a lacus lobortis convallis. Donec egestas dui vel eros mattis, placerat elementum ante iaculis. Cras consequat fermentum ex, vitae laoreet arcu porttitor ac. Proin eu hendrerit enim, non fermentum ante. Praesent molestie felis mi, aliquam convallis nisl pellentesque non. Quisque placerat congue lacinia. Morbi non massa eget metus efficitur tristique. Aenean auctor enim laoreet justo vulputate pulvinar. Fusce vel blandit ante. Mauris tincidunt ante sed erat facilisis, sed dictum mauris volutpat. In eu ante diam.',
-    'Sed vitae tellus eu ligula pulvinar consectetur vel eu turpis. Morbi non orci augue. Sed tincidunt mi urna, nec efficitur ipsum eleifend a. Praesent ultrices dictum felis, et convallis nulla dapibus quis. Praesent tincidunt viverra eros, ac ornare odio malesuada eu. Sed ornare risus risus, at faucibus tellus tincidunt a. Sed id lectus in ipsum rhoncus faucibus in vel odio. Aliquam erat volutpat. Donec ac ligula laoreet, varius dui eu, sagittis leo. Aliquam eget augue ac libero maximus fermentum ut a nunc.',
-];
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis imperdiet non tellus at cursus. Nulla fermentum nunc quis ultricies semper. Aliquam nisl ipsum, vehicula eu risus in, dapibus ullamcorper leo. Proin vehicula turpis ac ultrices tristique. Donec at consequat felis. Quisque ligula justo, molestie a consequat in, eleifend quis lacus. In congue lobortis nulla, vitae gravida velit scelerisque at. Fusce imperdiet venenatis tempor. Vestibulum enim enim, semper eget quam a, posuere tempor neque. Donec ultrices, mauris gravida sodales accumsan, ante libero efficitur est, laoreet pellentesque nibh mauris id ante.',
+  'Aliquam at purus nulla. Vestibulum id mauris id dolor bibendum mattis. Proin volutpat odio at lectus accumsan aliquam. Nulla congue sapien sed posuere commodo. Sed molestie eros id lectus venenatis dignissim. Aenean sed ligula metus. Donec sem nibh, commodo nec arcu sed, mollis ultrices leo. Nullam pulvinar posuere eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque est nunc, et ultricies purus condimentum ac. Mauris ac sollicitudin nulla. Morbi rhoncus mauris at sapien viverra imperdiet. Proin maximus tempus lorem, id euismod lacus sollicitudin hendrerit. Praesent tortor est, bibendum id sem non, faucibus fermentum massa.',
+  'In at ipsum vel eros viverra vehicula. Aliquam quis urna eros. Praesent bibendum dignissim nibh faucibus pretium. Ut pellentesque blandit elit bibendum feugiat. Curabitur et purus eu eros bibendum dignissim vitae ornare ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus a libero sagittis, pretium erat id, vulputate ipsum. Duis posuere lectus et nisl varius accumsan. Etiam condimentum purus at purus hendrerit, in lobortis massa eleifend.',
+  'Nulla leo ipsum, iaculis at tristique eu, vehicula sed purus. Sed ultricies est ac urna sollicitudin, quis feugiat dui aliquam. Fusce in nibh a lacus lobortis convallis. Donec egestas dui vel eros mattis, placerat elementum ante iaculis. Cras consequat fermentum ex, vitae laoreet arcu porttitor ac. Proin eu hendrerit enim, non fermentum ante. Praesent molestie felis mi, aliquam convallis nisl pellentesque non. Quisque placerat congue lacinia. Morbi non massa eget metus efficitur tristique. Aenean auctor enim laoreet justo vulputate pulvinar. Fusce vel blandit ante. Mauris tincidunt ante sed erat facilisis, sed dictum mauris volutpat. In eu ante diam.',
+  'Sed vitae tellus eu ligula pulvinar consectetur vel eu turpis. Morbi non orci augue. Sed tincidunt mi urna, nec efficitur ipsum eleifend a. Praesent ultrices dictum felis, et convallis nulla dapibus quis. Praesent tincidunt viverra eros, ac ornare odio malesuada eu. Sed ornare risus risus, at faucibus tellus tincidunt a. Sed id lectus in ipsum rhoncus faucibus in vel odio. Aliquam erat volutpat. Donec ac ligula laoreet, varius dui eu, sagittis leo. Aliquam eget augue ac libero maximus fermentum ut a nunc.',
+]
 
-const recaptchaApikey = '6Ldvm2scAAAAAL3GHSR6zJb8ilfCdFfNe9dh8pn9';
+const recaptchaApikey = '6Ldvm2scAAAAAL3GHSR6zJb8ilfCdFfNe9dh8pn9'
 
 const mapOptions = { center: { lat: 50.06713179159597, lng: 14.399110500001719 } };
 ---
 
 <div class="grid grid-cols-container">
-    <script type="text/plain" data-cookieconsent="performance" is:inline>
+  <script type="text/plain" data-cookieconsent="performance" is:inline>
         console.log('performance')
-    </script>
-    <script type="text/plain" data-cookieconsent="marketing" is:inline>
+  </script>
+  <script type="text/plain" data-cookieconsent="marketing" is:inline>
         console.log('marketing')
-    </script>
-    <div class="flex flex-col gap-4">
-        <Marquee class="flex gap-(--x-marquee-gap) overflow-clip group *:group-has-focus-within:[animation-play-state:paused] *:[animation-direction:reverse]" style="--x-marquee-sibling-count: 10; --x-marquee-visible-count: 9; --x-marquee-inline-size: calc(var(--spacing) * 50); --x-marquee-gap: calc(var(--spacing) * 6)">
-            {partners.map((partner, index) => (
-                <a
-                    href="#"
-                    class="w-(--x-marquee-inline-size) h-14 shrink-0 outline-2 outline-transparent outline-dashed rounded-lg focus-visible:outline-accent"
-                    aria-hidden={partner.hidden ? 'true' : undefined}
-                    tabindex={partner.hidden ? -1 : undefined}
-                    style={`--x-marquee-sibling-index: ${index + 1}`}
-                >
-                    <img class="size-full object-contain" src={`https://placehold.co/200x56/${partner.color}/webp`} alt={`Partner ${index + 1}`} width="200" height="56" loading="lazy">
-                </a>
-            ))}
-        </Marquee>
-
-        {[1, 2, 3].map((i) => (
-            <Details name="asdf" class="pl-6 border-l-2 border-transparent opacity-75 hocus:opacity-100 open:border-l-primary open:opacity-100 transition-all" open={i === 1}>
-                <summary class="x-heading sm">
-                    Accordion title {i}
-                </summary>
-                <div class="x-text text-main-secondary pt-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
-                </div>
-            </Details>
-        ))}
-
-        <div class="x-field">
-            <Label>Phone number</Label>
-            <Group>
-                <Control class="w-22 shrink-0">
-                    <select
-                        autocomplete="tel-country-code"
-                        required
-                        aria-label="Country code"
-                    >
-                        <option value="+420" selected>Česko +420</option>
-                        <option value="+421" selected>Slovensko +421</option>
-                    </select>
-                    <span aria-hidden="true">+420</span>
-                </Control>
-                <Control class="grow">
-                    <input
-                        type="tel"
-                        pattern="^[0-9]{6,14}$"
-                        placeholder="777 666 555"
-                        autocomplete="tel-national"
-                        aria-label="National number"
-                        required=""
-                    >
-                </Control>
-            </Group>
-        </div>
-
-        <form>
-            <Control>
-                <input type="text" class="peer" required>
-                <label>Label</label>
-                <div class="ms-auto peer-user-invalid:text-red-700">
-                    asdf
-                </div>
-            </Control>
-            <Button>submit</Button>
-        </form>
-        <Control>
-            <select required>
-                <option selected="" value="">- select an option -</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Select</label>
-        </Control>
-
-        <Check>
-            <input type="checkbox" id="defaultCheckbox" required>
-            <label for="defaultCheckbox">Checkbox</label>
-        </Check>
-
-        <Switch>
-            <input type="checkbox" id="defaultCheckbox" required>
-            <label for="defaultCheckbox">Checkbox</label>
-        </Switch>
-
-        <Control class="grow">
-            <input
-                type="number"
-                value="1"
-                step="1"
-            >
-
-            <div class="ms-auto">
-                <button command="--stepUp">+</button>
-                <button command="--stepDown">-</button>
-            </div>
-        </Control>
-
-        <Button>Button</Button>
-
-        <Button as="a">Button</Button>
-
-        <Carousel class="group/carousel max-w-6xl block mx-auto mt-8" id="defaultCarousel" role="region" aria-roledescription="carousel" aria-label="Carousel gallery">
-            <div
-                class="x-carousel-content flex gap-6 rounded-2xl"
-                tabindex="-1"
-                data-x-carousel-part="content"
-            >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((slide) => (
-                    <img id={`slide-${slide}`} class="aspect-3/2 rounded-2xl max-w-full lg:max-w-105 md:max-w-[calc(50%-0.75rem)]" src="https://placehold.co/420x280" alt=" " width="420" height="280" loading="lazy" data-snapped={slide === 1 ? '' : undefined}>
-                ))}
-            </div>
-            <div
-                class="flex gap-2 mt-4 justify-center"
-                data-x-carousel-part="pagination"
-                aria-hidden="true"
-            >
-            </div>
-            <div class="flex items-center gap-4 justify-end mt-6 group-data-scroll-none/carousel:hidden">
-                <Button
-                    class="square md:lg px-0 disabled:opacity-50"
-                    type="button"
-                    data-x-carousel-part="prev"
-                    command="--scrollPrev"
-                    commandfor="defaultCarousel"
-                    aria-controls="defaultCarousel"
-                    aria-label="Previous"
-                    disabled
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                    </svg>
-                </Button>
-                <Button
-                    class="square md:lg px-0 disabled:opacity-50"
-                    type="button"
-                    data-x-carousel-part="next"
-                    command="--scrollNext"
-                    commandfor="defaultCarousel"
-                    aria-controls="defaultCarousel"
-                    aria-label="Next"
-                >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                </Button>
-            </div>
-        </Carousel>
-
-        <Drawer class="noscript:starting:-translate-x-full noscript:not-open:-translate-x-full noscript:duration-500" id="drawerLeft" closedby="any">
-            <div class="x-drawer-scroller snap-x snap-mandatory noscript:after:content-none">
-                <nav class="x-drawer-content" data-x-drawer-part="content">
-                    Drawer content
-                    <Button class="muted" command="request-close" commandfor="drawerLeft">Close</Button>
-                </nav>
-            </div>
-        </Drawer>
-
-        <Drawer class="noscript:starting:translate-x-full noscript:not-open:translate-x-full noscript:ms-auto noscript:duration-500" style="animation-direction: reverse" id="drawerRight" closedby="any" data-placement="right">
-            <div class="x-drawer-scroller after:order-first snap-x snap-mandatory noscript:after:content-none">
-                <nav class="x-drawer-content" data-x-drawer-part="content">
-                    Drawer content
-                    <Button class="muted" command="request-close" commandfor="drawerRight">Close</Button>
-                </nav>
-            </div>
-        </Drawer>
-
-        <Drawer class="noscript:starting:translate-y-full noscript:not-open:translate-y-full noscript:mbs-auto noscript:duration-500" style="animation-direction: reverse" id="drawerBottom" closedby="any" data-placement="bottom">
-            <div class="x-drawer-scroller flex flex-col after:order-first snap-y snap-mandatory noscript:after:content-none">
-                <nav class="x-drawer-content" data-x-drawer-part="content" style="--x-drawer-content-inline-size: 100dvw;--x-drawer-content-block-size: calc(100vh - 4rem);">
-                    Drawer content
-                    <Button class="muted" command="request-close" commandfor="drawerBottom">Close</Button>
-                </nav>
-            </div>
-        </Drawer>
-
-        <Drawer class="noscript:starting:-translate-y-full noscript:not-open:-translate-y-full noscript:duration-500" id="drawerTop" closedby="any" data-placement="top">
-            <div class="x-drawer-scroller flex flex-col snap-y snap-mandatory noscript:after:content-none">
-                <nav class="x-drawer-content" data-x-drawer-part="content" style="--x-drawer-content-inline-size: 100dvw;--x-drawer-content-block-size: calc(100vh - 4rem);">
-                    Drawer content
-                    <Button class="muted" command="request-close" commandfor="drawerTop">Close</Button>
-                </nav>
-            </div>
-        </Drawer>
-
-        <Dialog is="x-drawer" class="drawer max-lg:bg-transparent max-lg:p-0 max-lg:backdrop:block" style="animation-direction: reverse" id="drawerBottomMobile" closedby="any" data-placement="bottom">
-            <div class="x-drawer-scroller scroll-pt-6 flex flex-col after:order-first snap-y snap-mandatory lg:contents lg:after:content-none noscript:after:content-none">
-                <nav class="x-dialog-content max-lg:mt-6 max-lg:opacity-100 max-lg:transform-none shrink-0 max-lg:snap-end max-lg:w-dvw max-lg:min-h-[calc(100dvh-4rem)] max-lg:rounded-b-none" data-x-drawer-part="content">
-                    <Button class="muted lg:hidden" command="request-close" commandfor="drawerBottomMobile">Close</Button>
-                    <Button class="muted max-lg:hidden" command="close" commandfor="drawerBottomMobile">Close</Button>
-                    <div>
-                        {[...lorem, ...lorem, ...lorem].map((paragraph) => (
-                            <p>{paragraph}</p>
-                        ))}
-                    </div>
-                </nav>
-            </div>
-        </Dialog>
-
-        <Button command="show-modal" commandfor="drawerLeft">Open left drawer</Button>
-        <Button command="show-modal" commandfor="drawerRight">Open right drawer</Button>
-        <Button command="show-modal" commandfor="drawerBottom">Open bottom drawer</Button>
-        <Button command="show-modal" commandfor="drawerTop">Open top drawer</Button>
-        <Button command="show-modal" commandfor="drawerBottomMobile">Open dialog drawer</Button>
-
-        <Dialog id="customDialog" closedby="any">
-            <Form class="x-dialog-content" method="post" action="/kontakt" data-recaptcha-apikey={recaptchaApikey}>
-                <Field>
-                    <Control>
-                        <input autofocus required>
-                    </Control>
-                </Field>
-                <input type="hidden" name="gtoken">
-                <Button type="submit">Close dialog</Button>
-            </Form>
-        </Dialog>
-
-        <Button command="show-modal" commandfor="customDialog">Open dialog</Button>
-
-        <div class="contents" id="snippet-component-16-form">
-            <Form class="grid grid-cols-12 gap-4" action="/kontakt" method="post" data-recaptcha-apikey={recaptchaApikey}>
-                <Field class="col-span-4">
-                    <Label for="given-name">First name</Label>
-                    <div class="x-control">
-                        <input id="given-name" name="given-name" autocomplete="given-name" required>
-                    </div>
-                </Field>
-                <Field class="col-span-4">
-                    <Label for="family-name">Last name</Label>
-                    <div class="x-control">
-                        <input id="family-name" name="family-name" autocomplete="family-name" required>
-                    </div>
-                </Field>
-                <Field class="col-span-4">
-                    <Label for="email">Email</Label>
-                    <div class="x-control">
-                        <input type="email" id="email" name="email" autocomplete="email" required>
-                    </div>
-                </Field>
-                <Field>
-                    <div class="x-rating accent-warning">
-                        {[1, 2, 3, 4, 5].map((rating) => (
-                            <input type="radio" name="rating" value={rating} aria-label={`Rate ${rating}/5`} required>
-                        ))}
-                    </div>
-                </Field>
-                <Field>
-                    <Check as="label">
-                        <input type="checkbox" required>
-                        asdf
-                    </Check>
-                </Field>
-                <Field>
-                    <label class="x-color" style="color: red">
-                        <input type="checkbox" aria-label="Red" required>
-                    </label>
-                </Field>
-                <Field class="col-span-full">
-                    <Group class="vertical">
-                        <div class="x-control">
-                            <input type="text" placeholder="1234 1234 1234 1234" required>
-                        </div>
-                        <Group class="w-full">
-                            <div class="x-control">
-                                <input type="text" placeholder="MM/YY" required>
-                            </div>
-                            <div class="x-control">
-                                <input type="text" placeholder="CVC" required>
-                            </div>
-                        </Group>
-                    </Group>
-                </Field>
-                <input type="hidden" name="gtoken">
-                <div class="x-field col-span-4 items-start">
-                    <Button type="submit" name="customSubmitter">Submit</Button>
-                </div>
-            </Form>
-        </div>
-
-        <Button class="self-start" command="toggle-popover" commandfor="popoverElement" aria-controls="popoverElement">Popover toggle</Button>
-        <Popover id="popoverElement" data-auto-update="true" data-placement="bottom" class="bottom w-(--anchor-size,anchor-size(inline)) my-(--margin)" popover="auto" style="--margin: 0.5rem">
-            <div class="x-popover-content shadow flex flex-col w-full">
-                <Button class="ghosted accent-main justify-start w-full" command="toggle-popover" commandfor="popoverElementInner" aria-controls="popoverElement">Item 2</Button>
-                <div class="x-popover right-start mx-(--margin)" popover="auto" id="popoverElementInner" style="--margin: 1rem">
-                    <div class="x-popover-content shadow p-2 w-32 flex flex-col">
-                        <div class="x-tooltip tooltip-right" aria-label="I am tooltip">
-                            <Button class="ghosted accent-main justify-start w-full">Item 1</Button>
-                        </div>
-                        <Button class="ghosted accent-main justify-start">Item 2</Button>
-                    </div>
-                </div>
-            </div>
-        </Popover>
-
-        <Image class="before:skeleton">
-            <img src="https://picsum.photos/id/1005/1920/1080" alt="Image" loading="lazy">
-        </Image>
-
-        <div class="flex justify-between items-center">
-            <Title as="output" class="xs font-normal flex gap-1 after:content-[attr(data-unit)]" data-unit="Kč" id="from" aria-label="Cena od">0</Title>
-            <Title as="output" class="xs font-normal flex gap-1 after:content-[attr(data-unit)]" data-unit="Kč" id="to" aria-label="Cena do">10,000</Title>
-        </div>
-
-        <Range class="mt-1 items-center">
-            <input type="range" value="0" step="100" max="10000" min="0" aria-labelledby="from" data-x-range-part="start" data-track="start">
-            <input type="range" value="10000" step="100" max="10000" min="0" aria-labelledby="to" data-x-range-part="end" data-track="end">
-        </Range>
-
-        <Tabs id="tabsElement">
-            <div class="x-tabs-content" role="tablist">
-                <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-all" id="all" aria-selected="true">
-                    All
-                </Button>
-                <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-photos" id="photos">
-                    Photos
-                </Button>
-                <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-music" id="music">
-                    Music
-                </Button>
-                <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-documents" id="documents">
-                    Documents
-                </Button>
-            </div>
-            <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="false" id="tab-all" aria-labelledby="all">
-                All
-            </div>
-            <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-photos" aria-labelledby="photos">
-                Photos
-            </div>
-            <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-music" aria-labelledby="music">
-                Music
-            </div>
-            <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-documents" aria-labelledby="documents">
-                Documents
-            </div>
-        </Tabs>
-
-        <GoogleMaps
-            class="flex items-center overflow-clip w-full rounded-2xl aspect-98/55 md:aspect-2/1 animation-trigger-enter from-translate-y-4 timeline-trigger-enter"
-            style="animation-delay: 300ms"
-            data-apikey="AIzaSyAIz5l_UM1ahT1yFxPQD6-c7U9OyXAkEdY"
-            data-options={JSON.stringify(mapOptions)}
+  </script>
+  <div class="flex flex-col gap-4">
+    <Marquee
+        class="flex gap-(--x-marquee-gap) overflow-clip group *:group-has-focus-within:[animation-play-state:paused] *:[animation-direction:reverse]"
+        style={[
+          '--x-marquee-sibling-count: 10',
+          '--x-marquee-visible-count: 9',
+          '--x-marquee-inline-size: calc(var(--spacing) * 50)',
+          '--x-marquee-gap: calc(var(--spacing) * 6)',
+        ].join('; ')}
+    >
+      {partners.map((partner, index) => (
+        <a
+          href="#"
+          class="w-(--x-marquee-inline-size) h-14 shrink-0 outline-2 outline-transparent outline-dashed rounded-lg focus-visible:outline-accent"
+          aria-hidden={partner.hidden ? 'true' : undefined}
+          tabindex={partner.hidden ? -1 : undefined}
+          style={`--x-marquee-sibling-index: ${index + 1}`}
         >
-            <div class="skeleton size-full"></div>
-        </GoogleMaps>
+          <img class="size-full object-contain" src={`https://placehold.co/200x56/${partner.color}/webp`} alt={`Partner ${index + 1}`} width="200" height="56" loading="lazy">
+        </a>
+      ))}
+    </Marquee>
+
+    {[1, 2, 3].map(i => (
+      <Details name="asdf" class="pl-6 border-l-2 border-transparent opacity-75 hocus:opacity-100 open:border-l-primary open:opacity-100 transition-all" open={i === 1}>
+        <summary class="x-heading sm">
+          Accordion title {i}
+        </summary>
+        <div class="x-text text-main-secondary pt-6">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.
+        </div>
+      </Details>
+    ))}
+
+    <div class="x-field">
+      <Label>Phone number</Label>
+      <Group>
+        <Control class="w-22 shrink-0">
+          <select
+            autocomplete="tel-country-code"
+            required
+            aria-label="Country code"
+          >
+            <option value="+420" selected>Česko +420</option>
+            <option value="+421" selected>Slovensko +421</option>
+          </select>
+          <span aria-hidden="true">+420</span>
+        </Control>
+        <Control class="grow">
+          <input
+            type="tel"
+            pattern="^[0-9]{6,14}$"
+            placeholder="777 666 555"
+            autocomplete="tel-national"
+            aria-label="National number"
+            required=""
+            >
+        </Control>
+      </Group>
     </div>
+
+    <form>
+      <Control>
+        <input type="text" class="peer" required>
+        <label>Label</label>
+        <div class="ms-auto peer-user-invalid:text-red-700">
+          asdf
+        </div>
+      </Control>
+      <Button>submit</Button>
+    </form>
+    <Control>
+      <select required>
+        <option selected="" value="">- select an option -</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label>Select</label>
+    </Control>
+
+    <Check>
+      <input type="checkbox" id="defaultCheckbox" required>
+      <label for="defaultCheckbox">Checkbox</label>
+    </Check>
+
+    <Switch>
+      <input type="checkbox" id="defaultCheckbox" required>
+      <label for="defaultCheckbox">Checkbox</label>
+    </Switch>
+
+    <Control class="grow">
+      <input
+        type="number"
+        value="1"
+        step="1"
+        >
+
+      <div class="ms-auto">
+        <button command="--stepUp">+</button>
+        <button command="--stepDown">-</button>
+      </div>
+    </Control>
+
+    <Button>Button</Button>
+
+    <Button as="a">Button</Button>
+
+    <Carousel class="group/carousel max-w-6xl block mx-auto mt-8" id="defaultCarousel" role="region" aria-roledescription="carousel" aria-label="Carousel gallery">
+      <div
+        class="x-carousel-content flex gap-6 rounded-2xl"
+        tabindex="-1"
+        data-x-carousel-part="content"
+      >
+        {[1, 2, 3, 4, 5, 6, 7, 8].map(slide => (
+          <img id={`slide-${slide}`} class="aspect-3/2 rounded-2xl max-w-full lg:max-w-105 md:max-w-[calc(50%-0.75rem)]" src="https://placehold.co/420x280" alt=" " width="420" height="280" loading="lazy" data-snapped={slide === 1 ? '' : undefined}>
+        ))}
+      </div>
+      <div
+        class="flex gap-2 mt-4 justify-center"
+        data-x-carousel-part="pagination"
+        aria-hidden="true"
+      >
+      </div>
+      <div class="flex items-center gap-4 justify-end mt-6 group-data-scroll-none/carousel:hidden">
+        <Button
+          class="square md:lg px-0 disabled:opacity-50"
+          type="button"
+          data-x-carousel-part="prev"
+          command="--scrollPrev"
+          commandfor="defaultCarousel"
+          aria-controls="defaultCarousel"
+          aria-label="Previous"
+          disabled
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+        </Button>
+        <Button
+          class="square md:lg px-0 disabled:opacity-50"
+          type="button"
+          data-x-carousel-part="next"
+          command="--scrollNext"
+          commandfor="defaultCarousel"
+          aria-controls="defaultCarousel"
+          aria-label="Next"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </Button>
+      </div>
+    </Carousel>
+
+    <Drawer class="noscript:starting:-translate-x-full noscript:not-open:-translate-x-full noscript:duration-500" id="drawerLeft" closedby="any">
+      <div class="x-drawer-scroller snap-x snap-mandatory noscript:after:content-none">
+        <nav class="x-drawer-content" data-x-drawer-part="content">
+          Drawer content
+          <Button class="muted" command="request-close" commandfor="drawerLeft">Close</Button>
+        </nav>
+      </div>
+    </Drawer>
+
+    <Drawer class="noscript:starting:translate-x-full noscript:not-open:translate-x-full noscript:ms-auto noscript:duration-500" style="animation-direction: reverse;" id="drawerRight" closedby="any" data-placement="right">
+      <div class="x-drawer-scroller after:order-first snap-x snap-mandatory noscript:after:content-none">
+        <nav class="x-drawer-content" data-x-drawer-part="content">
+          Drawer content
+          <Button class="muted" command="request-close" commandfor="drawerRight">Close</Button>
+        </nav>
+      </div>
+    </Drawer>
+
+    <Drawer class="noscript:starting:translate-y-full noscript:not-open:translate-y-full noscript:mbs-auto noscript:duration-500" style="animation-direction: reverse;" id="drawerBottom" closedby="any" data-placement="bottom">
+      <div class="x-drawer-scroller flex flex-col after:order-first snap-y snap-mandatory noscript:after:content-none">
+        <nav class="x-drawer-content" data-x-drawer-part="content" style="--x-drawer-content-inline-size: 100dvw;--x-drawer-content-block-size: calc(100vh - 4rem);">
+          Drawer content
+          <Button class="muted" command="request-close" commandfor="drawerBottom">Close</Button>
+        </nav>
+      </div>
+    </Drawer>
+
+    <Drawer class="noscript:starting:-translate-y-full noscript:not-open:-translate-y-full noscript:duration-500" id="drawerTop" closedby="any" data-placement="top">
+      <div class="x-drawer-scroller flex flex-col snap-y snap-mandatory noscript:after:content-none">
+        <nav class="x-drawer-content" data-x-drawer-part="content" style="--x-drawer-content-inline-size: 100dvw;--x-drawer-content-block-size: calc(100vh - 4rem);">
+          Drawer content
+          <Button class="muted" command="request-close" commandfor="drawerTop">Close</Button>
+        </nav>
+      </div>
+    </Drawer>
+
+    <Dialog is="x-drawer" class="drawer max-lg:bg-transparent max-lg:p-0 max-lg:backdrop:block" style="animation-direction: reverse;" id="drawerBottomMobile" closedby="any" data-placement="bottom">
+      <div class="x-drawer-scroller scroll-pt-6 flex flex-col after:order-first snap-y snap-mandatory lg:contents lg:after:content-none noscript:after:content-none">
+        <nav class="x-dialog-content max-lg:mt-6 max-lg:opacity-100 max-lg:transform-none shrink-0 max-lg:snap-end max-lg:w-dvw max-lg:min-h-[calc(100dvh-4rem)] max-lg:rounded-b-none" data-x-drawer-part="content">
+          <Button class="muted lg:hidden" command="request-close" commandfor="drawerBottomMobile">Close</Button>
+          <Button class="muted max-lg:hidden" command="close" commandfor="drawerBottomMobile">Close</Button>
+          <div>
+            {[...lorem, ...lorem, ...lorem].map(paragraph => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </Dialog>
+
+    <Button command="show-modal" commandfor="drawerLeft">Open left drawer</Button>
+    <Button command="show-modal" commandfor="drawerRight">Open right drawer</Button>
+    <Button command="show-modal" commandfor="drawerBottom">Open bottom drawer</Button>
+    <Button command="show-modal" commandfor="drawerTop">Open top drawer</Button>
+    <Button command="show-modal" commandfor="drawerBottomMobile">Open dialog drawer</Button>
+
+    <Dialog id="customDialog" closedby="any">
+      <Form class="x-dialog-content" method="post" action="/kontakt" data-recaptcha-apikey={recaptchaApikey}>
+        <Field>
+          <Control>
+            <input autofocus required>
+          </Control>
+        </Field>
+        <input type="hidden" name="gtoken">
+        <Button type="submit">Close dialog</Button>
+      </Form>
+    </Dialog>
+
+    <Button command="show-modal" commandfor="customDialog">Open dialog</Button>
+
+    <div class="contents" id="snippet-component-16-form">
+      <Form class="grid grid-cols-12 gap-4" action="/kontakt" method="post" data-recaptcha-apikey={recaptchaApikey}>
+        <Field class="col-span-4">
+          <Label for="given-name">First name</Label>
+          <div class="x-control">
+            <input id="given-name" name="given-name" autocomplete="given-name" required>
+          </div>
+        </Field>
+        <Field class="col-span-4">
+          <Label for="family-name">Last name</Label>
+          <div class="x-control">
+            <input id="family-name" name="family-name" autocomplete="family-name" required>
+          </div>
+        </Field>
+        <Field class="col-span-4">
+          <Label for="email">Email</Label>
+          <div class="x-control">
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+        </Field>
+        <Field>
+          <div class="x-rating accent-warning">
+            {[1, 2, 3, 4, 5].map(rating => (
+              <input type="radio" name="rating" value={rating} aria-label={`Rate ${rating}/5`} required>
+            ))}
+          </div>
+        </Field>
+        <Field>
+          <Check as="label">
+            <input type="checkbox" required>
+            asdf
+          </Check>
+        </Field>
+        <Field>
+          <label class="x-color" style="color: red;">
+            <input type="checkbox" aria-label="Red" required>
+          </label>
+        </Field>
+        <Field class="col-span-full">
+          <Group class="vertical">
+            <div class="x-control">
+              <input type="text" placeholder="1234 1234 1234 1234" required>
+            </div>
+            <Group class="w-full">
+              <div class="x-control">
+                <input type="text" placeholder="MM/YY" required>
+              </div>
+              <div class="x-control">
+                <input type="text" placeholder="CVC" required>
+              </div>
+            </Group>
+          </Group>
+        </Field>
+        <input type="hidden" name="gtoken">
+        <div class="x-field col-span-4 items-start">
+          <Button type="submit" name="customSubmitter">Submit</Button>
+        </div>
+      </Form>
+    </div>
+
+    <Button class="self-start" command="toggle-popover" commandfor="popoverElement" aria-controls="popoverElement">Popover toggle</Button>
+    <Popover id="popoverElement" data-auto-update="true" data-placement="bottom" class="bottom w-(--anchor-size,anchor-size(inline)) my-(--margin)" popover="auto" style="--margin: 0.5rem;">
+      <div class="x-popover-content shadow flex flex-col w-full">
+        <Button class="ghosted accent-main justify-start w-full" command="toggle-popover" commandfor="popoverElementInner" aria-controls="popoverElement">Item 2</Button>
+        <div class="x-popover right-start mx-(--margin)" popover="auto" id="popoverElementInner" style="--margin: 1rem;">
+          <div class="x-popover-content shadow p-2 w-32 flex flex-col">
+            <div class="x-tooltip tooltip-right" aria-label="I am tooltip">
+              <Button class="ghosted accent-main justify-start w-full">Item 1</Button>
+            </div>
+            <Button class="ghosted accent-main justify-start">Item 2</Button>
+          </div>
+        </div>
+      </div>
+    </Popover>
+
+    <Image class="before:skeleton">
+      <img src="https://picsum.photos/id/1005/1920/1080" alt="Image" loading="lazy">
+    </Image>
+
+    <div class="flex justify-between items-center">
+      <Title as="output" class="xs font-normal flex gap-1 after:content-[attr(data-unit)]" data-unit="Kč" id="from" aria-label="Cena od">0</Title>
+      <Title as="output" class="xs font-normal flex gap-1 after:content-[attr(data-unit)]" data-unit="Kč" id="to" aria-label="Cena do">10,000</Title>
+    </div>
+
+    <Range class="mt-1 items-center">
+      <input type="range" value="0" step="100" max="10000" min="0" aria-labelledby="from" data-x-range-part="start" data-track="start">
+      <input type="range" value="10000" step="100" max="10000" min="0" aria-labelledby="to" data-x-range-part="end" data-track="end">
+    </Range>
+
+    <Tabs id="tabsElement">
+      <div class="x-tabs-content" role="tablist">
+        <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-all" id="all" aria-selected="true">
+          All
+        </Button>
+        <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-photos" id="photos">
+          Photos
+        </Button>
+        <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-music" id="music">
+          Music
+        </Button>
+        <Button class="accent-main aria-selected:accent-primary" command="--toggle" commandfor="tabsElement" data-x-tabs-part="tab" role="tab" aria-controls="tab-documents" id="documents">
+          Documents
+        </Button>
+      </div>
+      <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="false" id="tab-all" aria-labelledby="all">
+        All
+      </div>
+      <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-photos" aria-labelledby="photos">
+        Photos
+      </div>
+      <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-music" aria-labelledby="music">
+        Music
+      </div>
+      <div class="aria-hidden:hidden" data-x-tabs-part="tabpanel" role="tabpanel" aria-hidden="true" id="tab-documents" aria-labelledby="documents">
+        Documents
+      </div>
+    </Tabs>
+
+    <GoogleMaps
+      class="flex items-center overflow-clip w-full rounded-2xl aspect-98/55 md:aspect-2/1 animation-trigger-enter from-translate-y-4 timeline-trigger-enter"
+      style="animation-delay: 300ms;"
+      data-apikey="AIzaSyAIz5l_UM1ahT1yFxPQD6-c7U9OyXAkEdY"
+      data-options={JSON.stringify(mapOptions)}
+    >
+      <div class="skeleton size-full"></div>
+    </GoogleMaps>
+  </div>
 </div>

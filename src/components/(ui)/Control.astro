@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'div'>;
+type Props = HTMLAttributes<'div'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<x-control class:list={["x-control", className]} {...props}>
-    <slot />
+<x-control class:list={['x-control', className]} {...props}>
+  <slot />
 </x-control>
 
 <script>

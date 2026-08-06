@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'dialog'>;
+type Props = HTMLAttributes<'dialog'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<dialog class:list={["x-dialog", className]} {...props}>
-    <slot />
+<dialog class:list={['x-dialog', className]} {...props}>
+  <slot />
 </dialog>
 
 <script>

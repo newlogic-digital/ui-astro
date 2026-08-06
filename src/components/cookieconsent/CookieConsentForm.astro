@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'form'>;
+type Props = HTMLAttributes<'form'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<form is="x-cookieconsent-form" class:list={["x-cookieconsent-form", className]} autocomplete="off" {...props}>
-    <slot />
+<form is="x-cookieconsent-form" class:list={['x-cookieconsent-form', className]} autocomplete="off" {...props}>
+  <slot />
 </form>
 
 <script>

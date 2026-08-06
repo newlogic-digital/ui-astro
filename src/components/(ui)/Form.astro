@@ -1,13 +1,13 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { HTMLAttributes } from 'astro/types'
 
-type Props = HTMLAttributes<'form'>;
+type Props = HTMLAttributes<'form'>
 
 const { class: className, ...props } = Astro.props;
 ---
 
-<form is="x-form" class:list={["x-form", className]} {...props}>
-    <slot />
+<form is="x-form" class:list={['x-form', className]} {...props}>
+  <slot />
 </form>
 
 <script>
