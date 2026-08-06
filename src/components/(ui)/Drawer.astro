@@ -15,26 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-drawer', class Element extends Drawer {}, { extends: 'dialog' })
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/drawer/props/default.css" layer(theme);
-  @import "winduum/src/components/drawer/props/content.css" layer(theme);
-  @import "winduum/src/components/drawer/default.css" layer(utilities);
-  @import "winduum/src/components/drawer/scroller.css" layer(utilities);
-  @import "winduum/src/components/drawer/content.css" layer(utilities);
-  @import "winduum/src/components/drawer/keyframes/default.css";
-
-  @layer utilities {
-    .x-drawer {
-      --x-drawer-content-inline-size: min(calc(100vw - 2rem), 22rem);
-      --x-drawer-content-block-size: 100dvh;
-    }
-
-    .x-drawer-content {
-      overflow-y: auto;
-      overscroll-behavior: contain;
-    }
-  }
-</style>

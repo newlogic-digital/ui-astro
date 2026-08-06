@@ -15,9 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-field', Field)
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/field/default.css" layer(utilities);
-</style>

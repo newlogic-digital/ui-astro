@@ -3,6 +3,7 @@
 @import "./theme/main.css" layer(theme);
 @import "winduum/src/base/reset.css" layer(base);
 @import "./base/defaults.css" layer(base);
+@import "./components/+.css";
 @import "./utils/index.css";
 @import "tailwindcss/utilities" layer(utilities) source("../");
 @import "./base/breakpoints.css";

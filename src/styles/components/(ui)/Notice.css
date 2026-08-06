@@ -1,0 +1,2 @@
+@import "winduum/src/components/notice/props/default.css" layer(theme);
+@import "winduum/src/components/notice/default.css" layer(utilities);

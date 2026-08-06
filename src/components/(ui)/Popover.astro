@@ -15,12 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-popover', Popover)
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/popover/props/default.css" layer(theme);
-  @import "winduum/src/components/popover/props/content.css" layer(theme);
-  @import "winduum/src/components/popover/default.css" layer(utilities);
-  @import "winduum/src/components/popover/content.css" layer(utilities);
-</style>

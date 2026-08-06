@@ -15,12 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-toast', Toast)
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/toast/props/default.css" layer(theme);
-  @import "winduum/src/components/toast/props/content.css" layer(theme);
-  @import "winduum/src/components/toast/default.css" layer(utilities);
-  @import "winduum/src/components/toast/content.css" layer(utilities);
-</style>

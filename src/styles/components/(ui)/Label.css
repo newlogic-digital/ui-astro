@@ -1,0 +1,2 @@
+@import "winduum/src/components/label/props/default.css" layer(theme);
+@import "winduum/src/components/label/default.css" layer(utilities);

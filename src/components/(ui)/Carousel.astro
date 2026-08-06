@@ -15,10 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-carousel', Carousel)
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/carousel/default.css" layer(utilities);
-  @import "winduum/src/components/carousel/content.css" layer(utilities);
-</style>

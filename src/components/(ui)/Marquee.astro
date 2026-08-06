@@ -9,10 +9,3 @@ const { as: Tag = 'div', class: className, ...props } = Astro.props;
 <Tag class:list={['x-marquee', className]} {...props}>
   <slot />
 </Tag>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/marquee/default.css" layer(utilities);
-  @import "winduum/src/components/marquee/keyframes/default.css";
-</style>

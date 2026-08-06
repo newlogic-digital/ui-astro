@@ -9,16 +9,3 @@ const { as: Tag = 'span', class: className, ...props } = Astro.props;
 <Tag class:list={['x-badge', className]} {...props}>
   <slot />
 </Tag>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/badge/props/default.css" layer(theme);
-  @import "winduum/src/components/badge/default.css" layer(utilities);
-  @import "winduum/src/components/badge/sm.css" layer(utilities);
-  @import "winduum/src/components/badge/lg.css" layer(utilities);
-  @import "winduum/src/components/badge/bordered.css" layer(utilities);
-  @import "winduum/src/components/badge/muted.css" layer(utilities);
-  @import "winduum/src/components/badge/square.css" layer(utilities);
-  @import "winduum/src/components/badge/circle.css" layer(utilities);
-</style>

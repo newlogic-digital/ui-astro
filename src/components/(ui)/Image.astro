@@ -15,10 +15,3 @@ const { class: className, ...props } = Astro.props;
 
     customElements.define('x-image', class Element extends Image(HTMLPictureElement) {}, { extends: 'picture' })
 </script>
-
-<style is:global>
-  @layer theme, base, utilities;
-
-  @import "winduum/src/components/image/default.css" layer(utilities);
-  @import "winduum/src/components/image/avatar.css" layer(utilities);
-</style>
