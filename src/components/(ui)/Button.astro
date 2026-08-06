@@ -19,7 +19,8 @@ const { as: Tag = 'button', class: className, ...props } = Astro.props as Props<
 
 <style is:global>
   @layer theme, base, utilities;
-
+  
+  @import "./../../styles/breakpoints.css" layer(theme);
   @import "winduum/src/components/button/props/default.css" layer(theme);
   @import "winduum/src/components/button/props/interactive.css" layer(theme);
   @import "winduum/src/components/button/default.css" layer(utilities);
@@ -31,6 +32,7 @@ const { as: Tag = 'button', class: className, ...props } = Astro.props as Props<
   @import "winduum/src/components/button/circle.css" layer(utilities);
   @import "winduum/src/components/button/spinner.css" layer(utilities);
   @import "tailwindcss/utilities" layer(utilities) source("./");
+  @source inline("md:lg lg:xl lg:hidden");
 
   @utility lg {
     .x-button:where(&) {

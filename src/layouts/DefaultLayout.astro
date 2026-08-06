@@ -1,4 +1,5 @@
 ---
+import Font from 'astro/components/Font.astro';
 import Toaster from '../components/(ui)/Toaster.astro'
 import App from '../components/App.astro'
 import Main from '../components/Main.astro';
@@ -25,6 +26,8 @@ import Main from '../components/Main.astro';
         import 'webuum/polyfill'
         import 'winduum/polyfill'
     </script>
+
+    <Font cssVariable="--font-inter" />
 
     <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
     <link rel="icon" type="image/webp" href="/favicons/favicon-512.webp">

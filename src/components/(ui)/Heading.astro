@@ -12,10 +12,11 @@ const { as: Tag = 'h2', class: className, ...props } = Astro.props;
 
 <style is:global>
   @layer theme, base, utilities;
-
+  @import "./../../styles/breakpoints.css" layer(theme);
   @import "winduum/src/components/heading/props/default.css" layer(theme);
   @import "winduum/src/components/heading/default.css" layer(utilities);
   @import "tailwindcss/utilities" layer(utilities) source("./");
+  @source inline("md:lg lg:xl");
 
   @layer theme {
     :root,

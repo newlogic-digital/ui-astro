@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import heroicons from '@newlogic-digital/vite-plugin-heroicons'
@@ -13,6 +13,13 @@ export default defineConfig({
       },
     },
   )],
+  fonts: [{
+    provider: fontProviders.google(),
+    name: 'Inter',
+    cssVariable: '--font-inter',
+    weights: ['400 700'],
+    subsets: ['latin', 'latin-ext'],
+  }],
   vite: {
     plugins: [tailwindcss()],
     // css: {

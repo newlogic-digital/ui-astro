@@ -1,7 +1,7 @@
 @import "./dark.css";
 
 @theme {
-  --default-font-family: "Inter", sans-serif;
+  --default-font-family: var(--font-inter);
   --default-color-space: srgb;
   --default-color-scheme: inherit;
   --color-accent: var(--color-primary);
