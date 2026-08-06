@@ -9,9 +9,16 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tsc": "tsc && astro check",
+    "eslint": "eslint '**/*.{ts,js,astro}'",
+    "eslint-fix": "eslint '**/*.{ts,js,astro}' --fix",
+    "stylelint": "stylelint 'src/**/*.{css,astro}'",
+    "stylelint-fix": "stylelint 'src/**/*.{css,astro}' --fix",
+    "lint": "npm run stylelint && npm run eslint"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.10",
     "@floating-ui/dom": "^1.8.0",
     "@googlemaps/js-api-loader": "^2.1.1",
     "@newlogic-digital/cookieconsent-js": "^1.1.1",
@@ -27,14 +34,31 @@
     "winduum-elements": "^0.0.18"
   },
   "devDependencies": {
-    "@newlogic-digital/vite-plugin-heroicons": "^1.3.1",
+    "@eslint/js": "^10.0.1",
+    "@newlogic-digital/vite-plugin-heroicons": "^1.4.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@stylistic/stylelint-config": "^5.0.0",
     "@types/node": "^26.1.2",
-    "browserslist-to-esbuild": "^2.1.1"
+    "browserslist-to-esbuild": "^2.1.1",
+    "eslint": "^10.8.0",
+    "eslint-plugin-astro": "^3.1.0",
+    "globals": "^17.9.0",
+    "jiti": "^2.7.0",
+    "postcss-html": "^2.0.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-html": "^2.0.0",
+    "stylelint-config-standard": "^40.0.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.66.0"
   },
   "browserslist": [
     "> 1%",
     "last 2 major versions",
     "not kaios > 0",
     "not dead"
-  ]
+  ],
+  "allowScripts": {
+    "esbuild": true,
+    "fsevents": true
+  }
 }
