@@ -10,11 +10,11 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "tsc": "tsc && astro check",
     "eslint": "eslint '**/*.{ts,js,astro}'",
     "eslint-fix": "eslint '**/*.{ts,js,astro}' --fix",
     "stylelint": "stylelint 'src/**/*.{css,astro}'",
     "stylelint-fix": "stylelint 'src/**/*.{css,astro}' --fix",
+    "check": "astro check && tsc",
     "lint": "npm run stylelint && npm run eslint"
   },
   "dependencies": {

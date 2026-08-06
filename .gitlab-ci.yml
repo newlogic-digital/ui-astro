@@ -1,9 +1,5 @@
 image: newlogic/deploy:lithium-php8.5
 
-variables:
-  ENVIRONMENT: production
-  TESTS_BUILD: '["eslint", "stylelint"]'
-
 build:
   stage: build
   artifacts:
@@ -18,5 +14,6 @@ build:
     - npm ci
 
   script:
-    - node $HOME/.gitlab-ci/v2/tests-build.mjs
+    - npm run lint
+    - npm run check
     - npm run build
