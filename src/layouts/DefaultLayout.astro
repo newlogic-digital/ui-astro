@@ -1,25 +1,88 @@
 ---
-import Font from 'astro/components/Font.astro';
+import Font from 'astro/components/Font.astro'
 import Toaster from '../components/(ui)/Toaster.astro'
 import App from '../components/App.astro'
 import Main from '../components/Main.astro';
+
+export interface Props {
+  lang?: string
+  title?: string
+  description?: string
+  keywords?: string
+  author?: string
+  appleMobileWebAppTitle?: string
+  themeColor?: string
+  autoDarkMode?: boolean
+  disableIndexing?: boolean
+  ogUrl?: string
+  ogType?: string
+  ogTitle?: string
+  ogDescription?: string
+  ogImage?: string
+  ogSiteName?: string
+  twitterCard?: string
+  twitterTitle?: string
+  twitterDescription?: string
+  twitterImage?: string
+}
+
+const defaultTitle = 'Web Skeleton - Domů'
+const defaultDescription = 'To craft a bold and compelling hero section, focus on clarity and impact. Start with a strong, concise headline that conveys your main message.'
+const defaultKeywords = 'Newlogic Digital'
+const defaultAuthor = 'Newlogic Digital - www.newlogic.cz'
+const defaultOgSiteName = 'Web Skeleton'
+
+const {
+  lang = 'cs',
+  title = defaultTitle,
+  description = defaultDescription,
+  keywords = defaultKeywords,
+  author = defaultAuthor,
+  themeColor = '#ffffff',
+  autoDarkMode = false,
+  disableIndexing = false,
+  ogUrl = Astro.url.href,
+  ogType = 'website',
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = new URL('/favicons/favicon-512.webp', Astro.url).href,
+  ogSiteName = defaultOgSiteName,
+  twitterCard = 'summary_large_image',
+  twitterTitle = ogTitle,
+  twitterDescription = ogDescription,
+  twitterImage = ogImage,
+} = Astro.props
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
-    <title>Astro Basics</title>
+    <title>{title}</title>
 
-    <!--<meta n:ifset="$keywords" name="keywords" content="{$keywords}">-->
-    <!--<meta n:ifset="$description" name="description" content="{$description}">-->
-    <!--<meta n:ifset="$author" name="author" content="{$author}">-->
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
+    <meta name="author" content={author}>
+    {disableIndexing && <meta name="robots" content="noindex">}
+
+    <meta property="og:url" content={ogUrl}>
+    <meta property="og:type" content={ogType}>
+    <meta property="og:title" content={ogTitle}>
+    <meta property="og:description" content={ogDescription}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:site_name" content={ogSiteName}>
+
+    <meta name="twitter:card" content={twitterCard}>
+    <meta name="twitter:title" content={twitterTitle}>
+    <meta name="twitter:description" content={twitterDescription}>
+    <meta name="twitter:image" content={twitterImage}>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <!--<meta name="apple-mobile-web-app-title" content="{$title}">-->
-    <!--<meta name="theme-color" content="{$themeColor}">-->
+    <meta name="apple-mobile-web-app-title" content={title}>
+    <meta name="theme-color" content={themeColor}>
     <meta name="generator" content={Astro.generator} />
 
     <script>
@@ -28,11 +91,11 @@ import Main from '../components/Main.astro';
     </script>
 
     <Font
-        cssVariable="--font-inter"
-        preload={[
-          { subset: "latin", style: "normal" },
-          { subset: "latin-ext", style: "normal" }
-        ]}
+      cssVariable="--font-inter"
+      preload={[
+        { subset: 'latin', style: 'normal' },
+        { subset: 'latin-ext', style: 'normal' },
+      ]}
     />
 
     <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
@@ -40,9 +103,11 @@ import Main from '../components/Main.astro';
     <link rel="apple-touch-icon" type="image/webp" href="/favicons/favicon-512.webp">
     <link rel="manifest" href="/favicons/manifest.webmanifest">
 
-    <!--<script n:if="$autoDarkMode">-->
-    <!--  (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.documentElement.classList.add('dark')-->
-    <!--</script>-->
+    {autoDarkMode && (
+      <script is:inline>
+        (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.documentElement.classList.add('dark')
+      </script>
+    )}
   </head>
   <App>
     <slot name="head" />
