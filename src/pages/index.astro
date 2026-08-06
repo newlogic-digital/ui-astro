@@ -1,10 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 import Playground from '../components/Playground.astro';
 import Toast from '../components/(ui)/Toast.astro';
 ---
 
-<Layout>
+<DefaultLayout>
     <Playground />
 
     <Toast slot="toast" id="toastElement">
@@ -16,4 +16,4 @@ import Toast from '../components/(ui)/Toast.astro';
             <button class="x-button muted ml-auto" command="--close" commandfor="toastElement">Close</button>
         </div>
     </Toast>
-</Layout>
+</DefaultLayout>
