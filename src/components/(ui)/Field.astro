@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <x-field class:list={['x-field', className]} {...props}>
   <slot />
 </x-field>
-
-<script>
-    import { Field } from 'winduum-elements/components/field/index.js'
-
-    customElements.define('x-field', Field)
-</script>

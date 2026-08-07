@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <x-carousel class:list={['x-carousel', className]} {...props}>
   <slot />
 </x-carousel>
-
-<script>
-    import { Carousel } from 'winduum-elements/components/carousel/index.js'
-
-    customElements.define('x-carousel', Carousel)
-</script>

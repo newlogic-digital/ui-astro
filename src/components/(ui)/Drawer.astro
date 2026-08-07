@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <dialog is="x-drawer" class:list={['x-drawer', className]} {...props}>
   <slot />
 </dialog>
-
-<script>
-    import { Drawer } from 'winduum-elements/components/drawer/index.js'
-
-    customElements.define('x-drawer', class Element extends Drawer {}, { extends: 'dialog' })
-</script>

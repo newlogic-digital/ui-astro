@@ -9,10 +9,3 @@ const { as: Tag = 'button', class: className, ...props } = Astro.props as Props<
 <Tag is={Tag === 'a' ? 'x-button--a' : 'x-button'} class:list={['x-button', className]} {...props}>
   <slot />
 </Tag>
-
-<script>
-    import { Button } from 'winduum-elements/components/button/index.js'
-
-    customElements.define('x-button', Button(HTMLButtonElement), { extends: 'button' })
-    customElements.define('x-button--a', Button(HTMLAnchorElement), { extends: 'a' })
-</script>

@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <form is="x-form" class:list={['x-form', className]} {...props}>
   <slot />
 </form>
-
-<script>
-    import { Form } from '@newlogic-digital/webuum-components'
-
-    customElements.define('x-form', class Element extends Form {}, { extends: 'form' })
-</script>

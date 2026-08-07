@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <header is="x-header" class:list={['x-header', className]} {...props}>
   <slot />
 </header>
-
-<script>
-    import { Header } from '@newlogic-digital/webuum-components'
-
-    customElements.define('x-header', class Element extends Header {}, { extends: 'header' })
-</script>

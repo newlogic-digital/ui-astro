@@ -85,11 +85,6 @@ const {
     <meta name="theme-color" content={themeColor}>
     <meta name="generator" content={Astro.generator} />
 
-    <script>
-        import 'webuum/polyfill'
-        import 'winduum/polyfill'
-    </script>
-
     <Font
       cssVariable="--font-inter"
       preload={[
@@ -121,6 +116,10 @@ const {
     </Toaster>
   </App>
 </html>
+
+<script>
+  import '@/scripts/main.js'
+</script>
 
 <style is:global>
   @import "/src/styles/main.css";

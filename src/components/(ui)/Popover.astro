@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <x-popover class:list={['x-popover', className]} {...props}>
   <slot />
 </x-popover>
-
-<script>
-    import { Popover } from 'winduum-elements/components/popover/index.js'
-
-    customElements.define('x-popover', Popover)
-</script>

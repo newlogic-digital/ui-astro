@@ -9,9 +9,3 @@ const { class: className, ...props } = Astro.props;
 <x-control class:list={['x-control', className]} {...props}>
   <slot />
 </x-control>
-
-<script>
-    import { Control } from 'winduum-elements/components/control/index.js'
-
-    customElements.define('x-control', Control)
-</script>

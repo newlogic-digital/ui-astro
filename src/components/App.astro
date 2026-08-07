@@ -9,7 +9,3 @@ const { class: className, ...props } = Astro.props;
 <body is="x-app" class:list={[className]} {...props}>
   <slot />
 </body>
-
-<script>
-    customElements.define('x-app', class App extends HTMLBodyElement {}, { extends: 'body' })
-</script>
