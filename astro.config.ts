@@ -3,8 +3,8 @@ import tailwindcss from '@tailwindcss/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import heroicons from '@newlogic-digital/vite-plugin-heroicons'
 import { type Plugin } from 'vite'
-
 import sitemap from '@astrojs/sitemap'
+import llms from 'astro-llms-md'
 
 export default defineConfig({
   site: 'https://example.com',
@@ -16,7 +16,7 @@ export default defineConfig({
         'icons-outline': 'src/icons/outline',
       },
     },
-  ), sitemap()],
+  ), sitemap(), llms()],
   fonts: [
     {
       provider: fontProviders.google(),
