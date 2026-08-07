@@ -23,7 +23,20 @@ export default defineConfig({
     },
   ],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss(), {
+      name: '@newlogic-digital/preload-remover',
+      configResolved(config) {
+        if (config.command !== 'build') return
+
+        const pI = config.plugins.findIndex(
+          p => p.name === 'native:import-analysis-build',
+        )
+
+        const plugins = config.plugins
+
+        if (pI !== -1) plugins.splice(pI, 1)
+      },
+    }],
     // css: {
     //   transformer: 'lightningcss',
     //   lightningcss: {
