@@ -2,7 +2,7 @@
 import Font from 'astro/components/Font.astro'
 import Toaster from '../components/(ui)/Toaster.astro'
 import App from '../components/App.astro'
-import Main from '../components/Main.astro';
+import Main from '../components/Main.astro'
 
 export interface Props {
   lang?: string
@@ -101,7 +101,7 @@ const {
 
     {autoDarkMode && (
       <script is:inline>
-        (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) && document.documentElement.classList.add('dark')
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark')
       </script>
     )}
   </head>
