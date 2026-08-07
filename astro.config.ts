@@ -26,6 +26,9 @@ export default defineConfig({
       subsets: ['latin', 'latin-ext'],
     },
   ],
+  build: {
+    inlineStylesheets: 'auto',
+  },
   vite: {
     plugins: [tailwindcss(), {
       name: '@newlogic-digital/preload-remover',
