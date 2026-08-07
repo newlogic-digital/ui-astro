@@ -2,8 +2,12 @@ import { defineConfig, fontProviders } from 'astro/config'
 import tailwindcss from '@tailwindcss/vite'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import heroicons from '@newlogic-digital/vite-plugin-heroicons'
+import { type Plugin } from 'vite'
+
+import sitemap from '@astrojs/sitemap'
 
 export default defineConfig({
+  site: 'https://example.com',
   integrations: [heroicons(
     {
       iconSets: {
@@ -12,7 +16,7 @@ export default defineConfig({
         'icons-outline': 'src/icons/outline',
       },
     },
-  )],
+  ), sitemap()],
   fonts: [
     {
       provider: fontProviders.google(),
@@ -32,7 +36,7 @@ export default defineConfig({
           p => p.name === 'native:import-analysis-build',
         )
 
-        const plugins = config.plugins
+        const plugins = config.plugins as Plugin[]
 
         if (pI !== -1) plugins.splice(pI, 1)
       },

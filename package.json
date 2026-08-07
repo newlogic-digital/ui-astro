@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@astrojs/sitemap": "^3.7.3",
     "@eslint/js": "^10.0.1",
     "@newlogic-digital/vite-plugin-heroicons": "^1.4.0",
     "@stylistic/eslint-plugin": "^5.10.0",
